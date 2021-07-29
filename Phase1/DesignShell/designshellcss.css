@@ -1,0 +1,13 @@
+h2,h3{color:blue}
+body{text-align: center; background-color: silver;}
+div{border-style: solid; border-color:red; border-width:2px; height: 200px;margin: 15px;}
+
+p.p1{font-weight:bold}
+
+#abc{font-size: 15px;}
+
+
+
+header{padding:20px; border-style:solid; border-width: 5px; margin: 15px;}
+
+footer{font-size: 22px; margin: 15px;}
