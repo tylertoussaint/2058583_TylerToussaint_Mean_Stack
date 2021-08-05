@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    footer{
+        text-align: center;
+        margin:30px;
+    }
+    table{
+        margin:20px;
+    }
+    </style>
+    </head>
+    <body>
+        <h1>Clients</h1>
+        <div id="div">
+        
+        </div>
+        <script type="text/javascript">
+        function disp(){
+            if (!localStorage.getItem('All')){
+                alert("Please fill in the data using the project manager link")
+            }
+            var person=localStorage.getItem("Client");
+            var all= localStorage.getItem('All');
+            var total= localStorage.getItem("Total")
+            var allJson=JSON.parse(all)
+            var personJson= JSON.parse(person)
+            console.log(all, total)
+
+            var table= document.createElement("table")
+            table.border=2;
+            var colCount= allJson[0].length
+            var row=table.insertRow(-1)
+            for(var i=0; i<colCount;i++){
+                var hcell=document.createElement("th");
+                hcell.innerHTML=allJson[0][i];
+                row.appendChild(hcell);}
+            for (var i=1;i<allJson.length;i++){
+                row=table.insertRow(-1)
+                for(var j=0;j<colCount;j++){
+                    var cell= row.insertCell(-1);
+                    cell.innerHTML= allJson[i][j];
+                }
+            
+            }
+            
+            document.getElementById('div').appendChild(table)
+            var myPTag= document.createElement('p')
+            var myPTagContent = document.createTextNode("The total budget is: "+ total);
+            myPTag.appendChild(myPTagContent);
+            document.getElementById("info").appendChild(myPTag)
+        }
+
+            
+        </script>
+        <input type="button" value="Display" onclick="disp()"/>
+        <div id='info'></div>
+        <footer>
+            <a href="welcomePage.html" class="abc">Welcome Page</a>
+            <a href="pmPage.html">Project Manager Page</a>
+            </footer>
+    </body>
+</html>

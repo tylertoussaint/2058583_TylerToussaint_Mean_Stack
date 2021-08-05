@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        .abc{
+          margin: 30px;
+      }  
+      footer{
+          text-align: center;
+      }
+      </style>
+        <script type="text/javascript">
+        var allUsers=[];
+        
+        allUsers.push(["Client","Project","Budget"]);
+        var total=0
+       
+        function addClient(){
+                if(localStorage.getItem('All')){
+                    allUsers= JSON.parse(localStorage.getItem("All"))
+                    
+                }
+                var person= document.getElementById('client').value+"  ";
+                var money= document.getElementById('budget').value;
+                var pro= document.getElementById('project').value;
+                let man = {client:person,project:pro,budget:money};
+                localStorage.setItem("Client",JSON.stringify(man));
+                manJSOn= localStorage.getItem("Client");
+                let manParse=JSON.parse(manJSOn);
+                console.log(manParse);
+                allUsers.push([man.client,manParse.project,manParse.budget]);
+                console.log("All user " + allUsers)
+                localStorage.setItem("All",JSON.stringify(allUsers));
+               
+               allUserJson= localStorage.getItem("All");
+               allJson=JSON.parse(allUserJson);
+                console.log("this is all" + allJson);
+                var myPTag = document.createElement("p");
+                
+                total=total+ parseFloat(manParse.budget)
+                console.log(total)
+                localStorage.setItem("Total",total)
+
+
+                alert(manParse.client + "has been added.")
+            }
+            function clearclient(){
+                document.getElementById('client').value=" ";
+                document.getElementById('project').value=" ";
+                document.getElementById('budget').value=" ";
+                
+
+            }
+            function clearStorage(){
+                localStorage.setItem("Client","")
+                localStorage.setItem("All","")
+                localStorage.setItem("Total","")
+
+            }
+        </script>
+    </head>
+    <body> 
+        Client:<input type="text" id="client" class="abc"/><br>
+        Project:<input type="text" id="project" class="abc"/><br>
+        Budget:<input type="number" id="budget" class="abc"/><br>
+        <input type="button" value="Add" onclick="addClient()" class="abc"/>
+        <input type="button" value="clear" onclick="clearclient()" class="abc"/>
+        <input type="button" value="Delete Storage" onclick="clearStorage()"/>
+        <footer>
+        <a href="welcomePage.html" class="abc">Welcome Page</a>
+        <a href="fPage.html">Financial Page</a>
+        </footer>
+        <div id="info">
+
+        </div>
+    </body>
+</html>
