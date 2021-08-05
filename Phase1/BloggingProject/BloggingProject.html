@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            a{
+                margin:auto;
+                border: 2px solid lightblue;
+                padding-left:20px;
+                padding-right: 20px;
+            }
+            h1{
+                text-align: center;
+                background-color: lightblue;
+                padding:20px;
+            }
+            .inner{
+                margin-bottom: 20px;
+                width:75%;
+    
+            }
+            .container1{
+                text-align: right;
+                width:400px;
+                margin-top:20px;
+            }
+            body{
+                background-color: lightcyan;
+            }
+            
+        </style>
+    
+    </head>
+        <body>
+            <h1>Blog Page</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+                <a href="">Add Blog</a>
+                <a href="">Home</a>
+                <a href=""> About Us</a>
+                <a href="">Contacts</a>
+            </nav>
+            <div class="container1">
+                Title: <input type="text" id="title" class="inner"><br>
+              Articles: <input type="text" id="article" class="inner"><br>
+            Add Image: <input type="number" max=1 min=0 id="image"class="inner">
+                <input type="button" class="help" value="?" onclick="help()"> 
+                <input type="button" value="Submit" class="" onclick="Addblog()">
+            </div>
+            <div class="container">
+                <div class="row" id="row">
+
+                </div>
+            </div>
+            <script>
+                function Addblog(){
+                    var Title = document.getElementById('title').value
+                    var article= document.getElementById('article').value
+                    var image1=document.getElementById('image').value
+                    var myDiv= document.createElement('div')
+                    var linebreak=document.createElement("br")
+                    var myDivim =document.createElement("img")
+                    myDiv.setAttribute("class","col")
+                    myDiv.setAttribute("id","mydiv")
+                    myDiv.setAttribute("style","display: block")
+                    switch(image1){
+                        case '0':
+                            
+                            myDivim.setAttribute("src","blogpic1.jpeg");
+                            myDivim.setAttribute("alt","This is alt Picture1");
+                            console.log("Set image")
+                            break;
+                        case '1':
+                        myDivim.setAttribute("src","blogpic2.jpeg");
+                            console.log("worked");
+                            break;
+                    }
+                    
+                    
+                    myDivTitle= document.createTextNode("Title : " + Title )
+                    myDivArt= document.createTextNode("Article : " + article )
+                    
+                    myDiv.appendChild(myDivTitle)
+                    //myDivim.appendChild(image1)
+                    myDiv.appendChild(linebreak)
+                    
+                    myDiv.appendChild(myDivArt)
+                    myDivim.setAttribute("style","display:block; width:200px; height:200px;")
+                    myDiv.appendChild(myDivim)
+                    document.getElementById('row').appendChild(myDiv)
+                    console.log(image1)
+                }
+                function help(){
+                    alert("Please select a value of 0 or 1 in the Add Image section select a picture: ")
+
+                }
+            </script>
+        </body>
+    
+</html>
