@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="cartmanager.js"></script>
+    <title>Document</title>
+    <style>
+        .container{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .col{
+            border: 2px solid;
+            padding:2px;
+            margin:10px;
+            font-weight: bolder;
+        }
+       a{
+           padding-left:20px;
+       }
+    </style>
+</head>
+<body>
+    <div class='container'>
+    <h1>Online Shopping</h1>
+    <div class="row">
+        <div class='col' style="background-image: url('mango.jpeg')">
+            <p>Mango<p>
+            <p>$5.00</p>
+            <input type="button" value="Add" id="button1" onclick="addItem1()">
+        </div>
+        <div class='col'style="background-image: url('banana.jpeg')">
+            <p>Banana<p>
+            <p>1.50</p>
+            <input type="button" value="Add" onclick="addItem2()">
+        </div>
+        </div>
+        <div class="row">
+            <div class='col' style="background-image: url('strawberry.jpeg')">
+                <p>Strawberries<p>
+                <p>$3.00</p>
+                <input type="button" value="Add" onclick="addItem3()">
+            </div>
+            <div class='col' style="background-image: url('bluberry.jpeg')">
+                <p>Blueberries<p>
+                <p>$2.50</p>
+                <input type="button" value="Add" onclick="addItem4()">
+            </div>
+        </div>
+        <footer>
+        <input type="button" value="Clear" onclick="clearStore()">
+        <a href="cartSummary.html">Order</a>
+        <label id="count"></label>
+        </footer>
+    </div>
+</body>
+</html>
