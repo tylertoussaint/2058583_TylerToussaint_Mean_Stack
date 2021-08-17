@@ -1,0 +1,47 @@
+<div *ngIf="flag1"> 
+<h2>Login</h2>
+<form [formGroup]="loginRef" (ngSubmit)="checkArray()">
+    <label>UserName: </label>
+    <input type="text" formControlName="user"/><br/>
+    <label>Password: </label>
+    <input type="password" formControlName="pass"/><br/>
+    <input type="submit" value="submit" />
+    <input type="reset" value="reset"/>
+</form>
+</div>
+<div *ngIf="flag2">
+    <h2>Register</h2>
+    <form [formGroup]="registerRef" (ngSubmit)="putArray()">
+        <label>First Name: </label>
+        <input type="text"/><br>
+        <label>Last Name: </label>
+        <input type="text"/><br>
+        <label>UserName: </label>
+        <input type="text" formControlName="user"/><br/>
+        <label>Password: </label>
+        <input type="password" formControlName="pass"/><br/>
+        <input type="submit" value="submit" />
+        <input type="reset" value="reset"/>
+    </form>
+</div>
+
+<div *ngIf="flag3">
+    <h2 >Welcome to Portfolio Page</h2>
+    <form [formGroup]="tableRef" (ngSubmit)="disTable()">
+    <label>Name: </label>
+        <input type="text" formControlName="fname"/><br>
+        <label>Phone Number: </label>
+        <input type="text" formControlName="phone"/><br>
+        <input type="submit" value="submit" />
+        <table border=1px;>
+            <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            </tr>
+            <tr *ngFor="let i of arrtable">
+                <td>{{i.fname}}</td>
+                <td>{{i.phone}}</td>
+            </tr>
+        </table>
+    </form>
+</div>
