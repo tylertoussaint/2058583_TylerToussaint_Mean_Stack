@@ -1,0 +1,12 @@
+[
+    {"q":"How long is an Olympic swimming pool (in meters)", "a1":"60","a2":"40", "a3":"50","a4":"100","ca":"50"},
+    {"q":"Which country do cities of Perth, Adelade & Brisbane belong to", "a1":"Australia","a2":"China", "a3":"Mexico","a4":"USA","ca":"Australia"},
+    {"q":"What geometric shape is generally used for stop signs?", "a1":"Square","a2":"Octagon", "a3":"Pentagon","a4":"Hexagom","ca":"Octagon"},
+    {"q":"How many languages are written from right to left?", "a1":"12","a2":"13", "a3":"14","a4":"15","ca":"12"},
+    {"q":"What is the name of the biggest technology company in South Korea?", "a1":"Samsung","a2":"Apple", "a3":"Intel","a4":"AMD","ca":"Samsung"},
+    {"q":"What is 5x5?", "a1":"10","a2":"20", "a3":"25","a4":"30","ca":"25"},
+    {"q":"What is 3+8?", "a1":"11","a2":"14", "a3":"16","a4":"19","ca":"11"},
+    {"q":"What is 80-50?", "a1":"20","a2":"30", "a3":"40","a4":"50","ca":"30"},
+    {"q":"Which animal can be seen on the Porsche logo", "a1":"Sheep","a2":"Horse", "a3":"Cow","a4":"Monkey","ca":"Horse"},
+    {"q":"What is the name of the largest ocean on earth?", "a1":"Pacific","a2":"Atlantic", "a3":"Mediterranean","a4":"Artic","ca":"Pacific"}
+]

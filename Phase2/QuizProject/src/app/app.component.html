@@ -1,0 +1,22 @@
+<h1 style="text-align: center;">TEST</h1>
+<form aria-required="true" id="theform">
+  <div *ngFor = "let i of produt">
+    <mat-radio-group >
+    <hr><label>{{i.q}}</label><br><hr>
+    
+    <input type="radio" [name]="i.q" [value]="i.a1" aria-required="true">
+    <span id=group></span>
+    <label>{{i.a1}}</label><br>
+    <input type="radio" [name]="i.q" [value]="i.a2">
+    <label>{{i.a2}}</label><br>
+    <input type="radio" [name]="i.q" [value]="i.a3">
+    <label>{{i.a3}}</label><br>
+    <input type="radio" [name]="i.q" [value]="i.a4">
+    <label>{{i.a4}}</label><br>
+    <p *ngIf="flag1">The correct answer is {{i.ca}}</p>
+  </mat-radio-group>
+  </div>
+  <button type="submit" (click)="disp()" aria-disabled="true" aria-describedby="group">Submit</button>
+  <button type="submit" (click)="review()">Review</button>
+  <button type="reset">Reset</button>
+</form>
