@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script type="text/JavaScript">
+        var socket = io();
+     function sendMsg(){ 
+        let mess= document.getElementById("msg").value;
+        let date=new Date().toLocaleTimeString();
+        let cchat=document.getElementById("name").value+ "-  "  +mess+"  :"+date ;
+        var myPtag=document.createElement("p");
+        var linebreak=document.createElement("br");
+        var hbreak=document.createElement("hr");
+        
+        myPtag =document.createTextNode(cchat );
+        
+        document.getElementById("output").appendChild(myPtag);
+        document.getElementById("output").appendChild(linebreak);
+        
+        socket.emit("obj",mess);
+       
+        socket.once("obj1",(msg)=> {
+            console.log(msg);
+            date=new Date().toLocaleTimeString();
+            schat="server-  " + msg+"  :"+date;
+            myPtag =document.createTextNode(schat );
+            document.getElementById("output").appendChild(linebreak);
+            document.getElementById("output").appendChild(myPtag);
+            document.getElementById("output").appendChild(hbreak);
+            
+        
+        })}
+    </script>
+</head>
+<body>
+    <h2>Socket.io Programming</h2>
+    <div>
+        <label>Name</label>
+        <input type="text" id="name"/><br>
+        <label>Message</label>
+        <input type="text" id="msg"/><br>
+        <input type="submit" value="submit" onclick="sendMsg()"/>
+    </div>
+    <div id="output">
+    </div>
+</body>
+</html>
