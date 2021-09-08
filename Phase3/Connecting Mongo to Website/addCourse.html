@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Course</h2>
+    <form action="addc" method="GET">
+        <label>Course Id</label>
+        <input type="text" name="id" required unique/><br/>
+        <label>Course Name</label>
+        <input type="text" name="name" required/><br/>
+        <label>Description</label>
+        <input type="text" name="description" required/><br/>
+        <label>Amount</label>
+        <input type="text" name="amount" required/><br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    <a href="index">Index</a> |
+    <a href="updateCourse">Update Course</a> |
+    <a href="deleteCourse">Delete Course</a> 
+    <a href="fetchCourses">Fetch Course</a> 
+</body>
+</html>
